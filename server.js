@@ -3,7 +3,7 @@ const hbs = require('hbs');
 
 const fs = require('fs');
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 8181;
 
 var app = express();
 
@@ -60,6 +60,14 @@ app.get('/about', (req,res) =>
          pageTitle: 'About Page'
     });
     
+});
+
+app.get('/projects', (req, res) =>
+{
+    res.render('projects.hbs',
+    {
+        pageTitle: 'Projects'
+    });
 });
 
 // /bad - send back json with errorMessage
